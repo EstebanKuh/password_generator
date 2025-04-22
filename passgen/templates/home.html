@@ -1,18 +1,48 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
+    <title>Password Generator App</title>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body>
-    <h1>Hello, world w Bootstrap!</h1>
+</head>
+
+<body>
+    <div class="container tex-center">
+        <h1>Password generator using DJango</h1>
+        <form action="{% url 'passgen' %}">
+            <select class="form-select mb-3" name="length">
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+
+            <h5>Extra feature:</h5>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="uppercase" name="uppercase">
+                <label class="form-check-label" for="uppercase">Uppercase</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="digits" name="digits">
+                <label class="form-check-label" for="digits">Digits</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="symbol" name="symbol">
+                <label class="form-check-label" for="symbol">Symbol</label>
+            </div>
+
+            <input class="btn btn-primary mt-2" type="submit" value="passgen">
+        </form>
+    </div>
 
     <!-- You can also include Popper and our JS separately. If you don’t plan to use dropdowns, popovers, or tooltips, save some kilobytes by not including Popper. -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script> -->
-  </body>
+</body>
+
 </html>
